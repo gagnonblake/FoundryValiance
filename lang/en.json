@@ -1,5 +1,14 @@
 {
 	"ACTOR.TypeCharacter": "Character",
+	"ACTOR.NamePlaceholder": "Name",
+	"ACTOR.OverviewTab": "Overview",
+	"ACTOR.InventoryTab": "Inventory",
+	"ACTOR.TraitsAndAbilitiesTab": "Traits And Abilities",
+	"ACTOR.NotesTab": "Notes",
+	"ACTOR.Agility": "Agility",
+	"ACTOR.Intelligence": "Intelligence",
+	"ACTOR.Power": "Power",
+	"ACTOR.Resilience": "Resilience",
 
 	"ITEM.TypeWeapon": "Weapon",
 	"ITEM.TypeArmorSer": "ArmorSet",

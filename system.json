@@ -6,9 +6,9 @@
 	"minimumCoreVersion": "0.9.0",
 	"compatibleCoreVersion": "9",
 	"author": "Blake",
-	"esmodules": [ "module/simple.js" ],
+	"esmodules": [ "module/valiance.js" ],
 	"scripts": [],
-	"styles": [ "styles/simple.css" ],
+	"styles": [ "styles/valiance.css" ],
 	"packs": [],
 	"languages": [
 		{
