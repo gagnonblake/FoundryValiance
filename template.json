@@ -1,0 +1,146 @@
+{
+	"Actor": {
+		"types": [
+			"character"
+		],
+		"character": {
+			"tier": 0,
+			"sizeTag": "",
+			"typeTag": "",
+			"functionalTags": [],
+			"characteristics": {
+				"agility": 1,
+				"intelligence": 1,
+				"power": 1,
+				"resilience": 1
+			},
+			"attributes": {
+				"armor": {
+					"value": 10,
+					"min": 0,
+					"max": 10
+				},
+				"endurance": {
+					"value": 2,
+					"min": 0,
+					"max": 2
+				},
+				"deathResistance": {
+					"value": 2,
+					"min": 0,
+					"max": 2
+				},
+				"focus": 1,
+				"lethality": 0,
+				"movement": 5,
+				"resistance": 0 
+			},
+			"background": {
+				"age": "",
+				"height": "",
+				"weight": "",
+				"gender": "",
+				"appearance": "",
+				"origin": "",
+				"languages": "",
+				"characterNotes": ""
+			},
+			"bonusWeightThreshold": 0
+		}
+	},
+	"Item": {
+		"types": [
+			"weapon",
+			"armorSet",
+			"accessory",
+			"gear",
+			"general",
+			"rawMaterial",
+			"vehicle",
+			"beast",
+			"trait",
+			"ability"
+		],
+		"templates": {
+			"common": {
+				"description": "",
+				"quantity": 1,
+				"weight": 0,
+				"cost": 0
+			},
+			"traitsAndAbilities": {
+				"effect": "",
+				"source": ""
+			}
+		},
+		"weapon": {
+			"templates": [
+                "common"
+            ],
+			"tags": [],
+			"weaponUpgrade": "",
+			"utilityUpgrade": "",
+			"traits": [],
+			"abilities": []
+		},
+		"armorSet": {
+			"templates": [
+                "common"
+            ],
+			"utilityUpgrade": "",
+			"traits": [],
+			"abilities": []
+		},
+		"accessory": {
+			"templates": [
+                "common"
+            ],
+			"utilityUpgrade": "",
+			"traits": []
+		},
+		"gear": {
+			"templates": [
+                "common"
+            ],
+			"utilityUpgrade": "",
+			"abilities": []
+		},
+		"general": {
+			"templates": [
+                "common"
+      ],
+			"utilityUpgrade": ""
+		},
+		"rawMaterial": {
+			"description": "",
+			"costPerUnit": 0,
+			"unit": ""
+		},
+		"vehicle": {
+			"templates": [
+                "common"
+            ],
+			"tags": [],
+			"haulingWeight": 0
+		},
+		"beast": {
+			"templates": [
+                "common"
+            ],
+			"character": "",
+			"haulingWeight": 0
+		},
+		"trait": {
+			"templates": [
+				"traitsAndAbilities"
+			]
+		},
+		"ability": {
+			"templates": [
+				"traitsAndAbilities"
+			],
+			"primaryTags": [],
+			"secondaryTags": []
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"ACTOR.TypeCharacter": "Character",
+
+	"ITEM.TypeWeapon": "Weapon",
+	"ITEM.TypeArmorSer": "ArmorSet",
+	"ITEM.TypeAccesory": "Accessory",
+	"ITEM.TypeGear": "Gear",
+	"ITEM.TypeGeneral": "General",
+	"ITEM.TypeRawMaterial": "rawMaterial",
+	"ITEM.TypeVehicle": "Vehicle",
+	"ITEM.TypeBeast": "Beast",
+	"ITEM.TypeTrait": "Trait",
+	"ITEM.TypeFeature": "Feature"
+}

@@ -1,0 +1,27 @@
+{
+	"name": "valiance",
+	"title": "Valiance",
+	"description": "A protoype Foundry system for the Valiance tabletop role-playing game",
+	"version": "0.0.1",
+	"minimumCoreVersion": "0.9.0",
+	"compatibleCoreVersion": "9",
+	"author": "Blake",
+	"esmodules": [ "module/simple.js" ],
+	"scripts": [],
+	"styles": [ "styles/simple.css" ],
+	"packs": [],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"gridDistance": 5,
+	"gridUnits": "ft",
+	"primaryTokenAttribute": "attributes.armor",
+	"secondaryTokenAttribute": "attributes.endurance",
+	"url": "https://github.com/gagnonblake/FoundryValiance",
+	"manifest": "",
+	"download": ""
+}
