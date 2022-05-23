@@ -1,2 +1,3 @@
-# FoundryValiance
-Foundry VTT automation for the Valiance TTRPG system
+# Valiance System
+
+This system is a WIP Valiance system.

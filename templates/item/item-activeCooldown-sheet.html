@@ -1,0 +1,29 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="overview">{{localize 'VALIANCE.OverviewTabLabel'}}</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Overview Tab --}}
+        <div class="tab" data-group="primary" data-tab="overview">
+            <div class="resource flex-group-center">
+		        <label for="data.value" class="resource-label">{{localize 'VALIANCE.CooldownValueLabel'}}</label>
+		        <div class="resource-content flexrow flex-center flex-between">
+			        <input type="text" name="data.value" value="{{data.value}}" data-dtype="Number" />
+		        </div>
+	        </div>
+        </div>
+
+    </section>
+
+</form>

@@ -1,0 +1,161 @@
+{{!-- Characteristics --}}
+<div class="resources grid grid-4col">
+
+	<div class="resource flex-group-center">
+		<label for="data.characteristics.agility.value" class="resource-label">{{localize 'VALIANCE.AgilityLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.characteristics.agility.value" value="{{data.characteristics.agility.value}}" data-dtype="Number" />
+		</div>
+	</div>
+
+	<div class="resource flex-group-center">
+		<label for="data.characteristics.mind.value" class="resource-label">{{localize 'VALIANCE.MindLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.characteristics.mind.value" value="{{data.characteristics.mind.value}}" data-dtype="Number" />
+		</div>
+	</div>
+
+	<div class="resource flex-group-center">
+		<label for="data.characteristics.power.value" class="resource-label">{{localize 'VALIANCE.PowerLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.characteristics.power.value" value="{{data.characteristics.power.value}}" data-dtype="Number" />
+		</div>
+	</div>
+
+	<div class="resource flex-group-center">
+		<label for="data.characteristics.resilience.value" class="resource-label">{{localize 'VALIANCE.ResilienceLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.characteristics.resilience.value" value="{{data.characteristics.resilience.value}}" data-dtype="Number" />
+		</div>
+	</div>
+
+</div>
+
+{{!-- Non-Resource Attributes --}}
+<div class="resources grid grid-4col">
+
+	<div class="resource flex-group-center">
+		<label for="data.attributes.movement.value" class="resource-label">{{localize 'VALIANCE.MovementLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.attributes.movement.value" value="{{data.attributes.movement.value}}" data-dtype="Number" />
+		</div>
+	</div>
+
+	<div class="resource flex-group-center">
+		<label for="data.attributes.focus.value" class="resource-label">{{localize 'VALIANCE.FocusLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.attributes.focus.value" value="{{data.attributes.focus.value}}" data-dtype="Number" />
+		</div>
+	</div>
+
+	<div class="resource flex-group-center">
+		<label for="data.attributes.lethality.value" class="resource-label">{{localize 'VALIANCE.LethalityLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.attributes.lethality.value" value="{{data.attributes.lethality.value}}" data-dtype="Number" />
+		</div>
+	</div>
+
+	<div class="resource flex-group-center">
+		<label for="data.attributes.resistance.value" class="resource-label">{{localize 'VALIANCE.ResistanceLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.attributes.resistance.value" value="{{data.attributes.resistance.value}}" data-dtype="Number" />
+		</div>
+	</div>
+
+</div>
+
+{{!-- Statuses and Cooldowns --}}
+<div class="grid grid-2col">
+
+	{{!-- Statuses --}}
+	<div>
+		<div class="grid grid-3col">
+			<div class="resource flex-group-center">
+				<label for="data.statusStacks.burningStacks.value" class="resource-label">{{localize 'VALIANCE.BurningStacksLabel'}}</label>
+				<div class="resource-content flexrow flex-center flex-between">
+					<input type="text" name="data.statusStacks.burningStacks.value" value="{{data.statusStacks.burningStacks.value}}" data-dtype="Number" />
+				</div>
+			</div>
+
+			<div class="resource flex-group-center">
+				<label for="data.statusStacks.poisonedStacks.value" class="resource-label">{{localize 'VALIANCE.PoisonedStacksLabel'}}</label>
+				<div class="resource-content flexrow flex-center flex-between">
+					<input type="text" name="data.statusStacks.poisonedStacks.value" value="{{data.statusStacks.poisonedStacks.value}}" data-dtype="Number" />
+				</div>
+			</div>
+
+			<div class="resource flex-group-center">
+				<label for="data.statusStacks.regeneratingStacks.value" class="resource-label">{{localize 'VALIANCE.RegeneratingStacksLabel'}}</label>
+				<div class="resource-content flexrow flex-center flex-between">
+					<input type="text" name="data.statusStacks.regeneratingStacks.value" value="{{data.statusStacks.regeneratingStacks.value}}" data-dtype="Number" />
+				</div>
+			</div>
+		</div>
+
+		<ol class="items-list effects-list">
+			{{#each effects as |section sid|}}
+			<li class="items-header flexrow" data-effect-type="{{section.type}}">
+				<h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
+			</li>
+
+			<ol class="item-list">
+				{{#each section.effects as |effect|}}
+				<li class="item effect flexrow" data-effect-id="{{effect.id}}">
+					<div class="item-name effect-name flexrow">
+						<img class="item-image" src="{{effect.data.icon}}" />
+						<h4>{{effect.data.label}}</h4>
+					</div>
+					<div class="item-controls effect-controls flexrow">
+						<a class="effect-control" data-action="delete" title="{{localize 'VALIANCE.EffectClear'}}">
+							<i class="fas fa-trash"></i>
+						</a>
+					</div>
+				</li>
+				{{/each}}
+			</ol>
+			{{/each}}
+		</ol>
+	</div>
+
+	{{!-- Cooldowns --}}
+	<ol class="items-list">
+		<li class="grid grid-cooldown-table items-header">
+			<div class="item-name align-center">{{localize 'VALIANCE.CooldownAbilityLabel'}}</div>
+			<div class="item-name align-center">{{localize 'VALIANCE.CooldownValueLabel'}}</div>
+			<div class="item-controls">
+				<a class="cooldown-control cooldown-create" data-type="activeCooldown" data-action="create" title="{{localize 'VALIANCE.CooldownAddLabel'}}">
+					<i class="fas fa-plus"></i>
+				</a>
+			</div>
+		</li>
+
+		{{#each activeCooldowns as |cooldown id|}}
+		<li class="grid grid-cooldown-table" data-item-id="{{cooldown._id}}">
+			<div class="item-name">
+				<h4>{{cooldown.name}}</h4>
+			</div>
+			<div class="item-controls">
+				<a class="cooldown-control cooldown-decrease" data-action="decrease" title="{{localize 'VALIANCE.CooldownDecreaseLabel'}}">
+					<i class="fas fa-minus"></i>
+				</a>
+				<div class="item-name align-center">
+					<h4>{{cooldown.data.value}}</h4>
+				</div>
+				<a class="cooldown-control cooldown-increase" data-action="increase" title="{{localize 'VALIANCE.CooldownIncreaseLabel'}}">
+					<i class="fas fa-plus"></i>
+				</a>
+			</div>
+			<div class="item-controls">
+				<a class="cooldown-control cooldown-edit" data-type="activeCooldown" data-action="edit" title="{{localize 'VALIANCE.CooldownEditLabel'}}">
+					<i class="fas fa-edit"></i>
+				</a>
+				<a class="cooldown-control cooldown-delete" data-type="activeCooldown" data-action="delete" title="{{localize 'VALIANCE.CooldownClearLabel'}}">
+					<i class="fas fa-trash"></i>
+				</a>
+			</div>
+		</li>
+		{{/each}}
+	</ol>
+
+</div>
+

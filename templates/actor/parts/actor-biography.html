@@ -1,0 +1,65 @@
+{{!-- Basic information --}}
+<div class="grid grid-4col">
+
+	<div class="resource flex-group-center">
+		<label for="data.background.age" class="resource-label">{{localize 'VALIANCE.AgeLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.background.age" value="{{data.background.age}}" data-dtype="text" />
+		</div>
+	</div>
+
+	<div class="resource flex-group-center">
+		<label for="data.background.height" class="resource-label">{{localize 'VALIANCE.HeightLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.background.height" value="{{data.background.height}}" data-dtype="text" />
+		</div>
+	</div>
+
+	<div class="resource flex-group-center">
+		<label for="data.background.weight" class="resource-label">{{localize 'VALIANCE.WeightLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.background.weight" value="{{data.background.weight}}" data-dtype="text" />
+		</div>
+	</div>
+
+	<div class="resource flex-group-center">
+		<label for="data.background.gender" class="resource-label">{{localize 'VALIANCE.GenderLabel'}}</label>
+		<div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="data.background.gender" value="{{data.background.gender}}" data-dtype="text" />
+		</div>
+	</div>
+
+</div>
+
+{{!-- Language --}}
+<div class="">
+
+	<div class="resource">
+		<label for="data.background.languages" class="resource-label">{{localize 'VALIANCE.LanguagesLabel'}}</label>
+		<div>
+			<input type="text" name="data.background.languages" value="{{data.background.languages}}" data-dtype="text" />
+		</div>
+	</div>
+
+</div>
+
+{{!-- Appearance and Origin --}}
+<div class="grid grid-2col">
+
+	<div class="resource flex-group-editor">
+		<label for="data.background.appearance" class="resource-label">{{localize 'VALIANCE.AppearanceLabel'}}</label>
+		{{editor content=data.background.appearance target="data.background.appearance" rollData=rollData button=true owner=owner editable=editable}}
+	</div>
+
+	<div class="resource flex-group-editor">
+		<label for="data.background.origin" class="resource-label">{{localize 'VALIANCE.OriginLabel'}}</label>
+		{{editor content=data.background.origin target="data.background.origin" rollData=rollData button=true owner=owner editable=editable}}
+	</div>
+
+</div>
+
+{{!-- Character Notes --}}
+<div class="resource flex-group-editor">
+	<label for="data.background.characterNotes" class="resource-label">{{localize 'VALIANCE.NotesLabel'}}</label>
+	{{editor content=data.background.characterNotes target="data.background.characterNotes" rollData=rollData button=true owner=owner editable=editable}}
+</div>

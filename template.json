@@ -1,146 +1,179 @@
 {
-	"Actor": {
-		"types": [
-			"character"
-		],
-		"character": {
-			"tier": 0,
-			"sizeTag": "",
-			"typeTag": "",
-			"functionalTags": [],
-			"characteristics": {
-				"agility": 1,
-				"intelligence": 1,
-				"power": 1,
-				"resilience": 1
-			},
-			"attributes": {
-				"armor": {
-					"value": 10,
-					"min": 0,
-					"max": 10
-				},
-				"endurance": {
-					"value": 2,
-					"min": 0,
-					"max": 2
-				},
-				"deathResistance": {
-					"value": 2,
-					"min": 0,
-					"max": 2
-				},
-				"focus": 1,
-				"lethality": 0,
-				"movement": 5,
-				"resistance": 0 
-			},
-			"background": {
-				"age": "",
-				"height": "",
-				"weight": "",
-				"gender": "",
-				"appearance": "",
-				"origin": "",
-				"languages": "",
-				"characterNotes": ""
-			},
-			"bonusWeightThreshold": 0
-		}
-	},
-	"Item": {
-		"types": [
-			"weapon",
-			"armorSet",
-			"accessory",
-			"gear",
-			"general",
-			"rawMaterial",
-			"vehicle",
-			"beast",
-			"trait",
-			"ability"
-		],
-		"templates": {
-			"common": {
-				"description": "",
-				"quantity": 1,
-				"weight": 0,
-				"cost": 0
-			},
-			"traitsAndAbilities": {
-				"effect": "",
-				"source": ""
-			}
-		},
-		"weapon": {
-			"templates": [
+    "Actor": {
+        "types": [
+            "character"
+        ],
+        "character": {
+            "tier": {
+                "value": 0
+            },
+            "sizeTag": "",
+            "typeTag": "",
+            "functionalTags": [],
+            "characteristics": {
+                "agility": {
+                    "value": 0
+                },
+                "mind": {
+                    "value": 0
+                },
+                "power": {
+                    "value": 0
+                },
+                "resilience": {
+                    "value": 0
+                }
+            },
+            "attributes": {
+                "armor": {
+                    "value": 10,
+                    "min": 0,
+                    "max": 10
+                },
+                "endurance": {
+                    "value": 2,
+                    "min": 0,
+                    "max": 2
+                },
+                "valiancy": {
+                    "value": 2,
+                    "min": 0,
+                    "max": 2
+                },
+                "focus": {
+                    "value": 0
+                },
+                "lethality": {
+                    "value": 0
+                },
+                "movement": {
+                    "value": 5
+                },
+                "resistance": {
+                    "value": 0
+                }
+            },
+            "background": {
+                "age": "",
+                "height": "",
+                "weight": "",
+                "gender": "",
+                "appearance": "",
+                "origin": "",
+                "languages": "",
+                "characterNotes": ""
+            },
+            "weightThreshold": 0,
+            "statusStacks": {
+                "burningStacks": {
+                    "value": 0
+                },
+                "poisonedStacks": {
+                    "value": 0
+                },
+                "regeneratingStacks": {
+                    "value": 0
+                }
+            },
+            "activeCooldowns": {}
+        }
+    },
+    "Item": {
+        "types": [
+            "weapon",
+            "armorSet",
+            "accessory",
+            "gear",
+            "general",
+            "rawMaterial",
+            "vehicle",
+            "beast",
+            "trait",
+            "ability",
+            "utilityEffect",
+            "activeCooldown"
+        ],
+        "templates": {
+            "common": {
+                "description": "",
+                "quantity": 1,
+                "weight": 0,
+                "cost": 0
+            }
+        },
+        "weapon": {
+            "templates": [
                 "common"
             ],
-			"tags": [],
-			"weaponUpgrade": "",
-			"utilityUpgrade": "",
-			"traits": [],
-			"abilities": []
-		},
-		"armorSet": {
-			"templates": [
+            "tags": [],
+            "weaponUpgrade": "",
+            "utilityUpgrade": "",
+            "traits": [],
+            "abilities": []
+        },
+        "armorSet": {
+            "templates": [
                 "common"
             ],
-			"utilityUpgrade": "",
-			"traits": [],
-			"abilities": []
-		},
-		"accessory": {
-			"templates": [
+            "utilityUpgrade": "",
+            "traits": [],
+            "abilities": []
+        },
+        "accessory": {
+            "templates": [
                 "common"
             ],
-			"utilityUpgrade": "",
-			"traits": []
-		},
-		"gear": {
-			"templates": [
+            "utilityUpgrade": "",
+            "traits": []
+        },
+        "gear": {
+            "templates": [
                 "common"
             ],
-			"utilityUpgrade": "",
-			"abilities": []
-		},
-		"general": {
-			"templates": [
-                "common"
-      ],
-			"utilityUpgrade": ""
-		},
-		"rawMaterial": {
-			"description": "",
-			"costPerUnit": 0,
-			"unit": ""
-		},
-		"vehicle": {
-			"templates": [
+            "utilityUpgrade": "",
+            "abilities": []
+        },
+        "general": {
+            "templates": [
                 "common"
             ],
-			"tags": [],
-			"haulingWeight": 0
-		},
-		"beast": {
-			"templates": [
+            "utilityUpgrade": ""
+        },
+        "rawMaterial": {
+            "description": "",
+            "costPerUnit": 0,
+            "unit": ""
+        },
+        "vehicle": {
+            "templates": [
                 "common"
             ],
-			"character": "",
-			"haulingWeight": 0
-		},
-		"trait": {
-			"templates": [
-				"traitsAndAbilities"
-			]
-		},
-		"ability": {
-			"templates": [
-				"traitsAndAbilities"
-			],
-			"primaryTags": [],
-			"secondaryTags": []
-		}
-	}
+            "tags": [],
+            "haulingWeight": 0
+        },
+        "beast": {
+            "templates": [
+                "common"
+            ],
+            "character": "",
+            "haulingWeight": 0
+        },
+        "trait": {
+            "description": "",
+            "source": ""
+        },
+        "ability": {
+            "description": "",
+            "primaryTags": [],
+            "secondaryTags": [],
+            "damageFormula": "",
+            "source": ""
+        },
+        "utilityEffect": {
+            "description": ""
+        },
+        "activeCooldown": {
+            "value": 0
+        }
+    }
 }

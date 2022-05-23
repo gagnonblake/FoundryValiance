@@ -1,0 +1,104 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        
+        <div class="header-fields">
+
+            <div class="grid grid-actor-header">
+
+                <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+
+                <h1 class="charname">
+                    <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'VALIANCE.NamePlaceholder'}}" />
+                </h1>
+
+                <div class="align-center">
+                    <label for="data.tier" class="resource-label">{{localize 'VALIANCE.TierLabel'}}</label>
+                    <input type="text" name="data.tier.value" value="{{data.tier.value}}" data-dtype="Number" />
+                </div>
+            </div>
+
+            <div>
+                <span>{{localize 'VALIANCE.LanternToggleLabel'}}</span>
+                <a class="misc-control" data-action="toggleLantern" title="{{localize 'VALIANCE.LanternToggle'}}">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+            
+            <div class="resources grid grid-3col">
+
+                <div class="resource flex-group-center">
+                    <label for="data.attributes.armor.value" class="resource-label">{{localize 'VALIANCE.ArmorLabel'}}</label>
+                    <div class="resource-content grid grid-primary-resource flex-group-center">
+                        <input type="text" name="data.attributes.armor.value" value="{{data.attributes.armor.value}}" data-dtype="Number" />
+                        <span> / </span>
+                        <input type="text" name="data.attributes.armor.max" value="{{data.attributes.armor.max}}" data-dtype="Number" />
+                    </div>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="data.attributes.endurance.value" class="resource-label">{{localize 'VALIANCE.EnduranceLabel'}}</label>
+                    <div class="resource-content grid grid-primary-resource flex-group-center">
+                        <input type="text" name="data.attributes.endurance.value" value="{{data.attributes.endurance.value}}" data-dtype="Number" />
+                        <span> / </span>
+                        <input type="text" name="data.attributes.endurance.max" value="{{data.attributes.endurance.max}}" data-dtype="Number" />
+                    </div>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="data.attributes.valiancy.value" class="resource-label">{{localize 'VALIANCE.ValiancyLabel'}}</label>
+                    <div class="resource-content grid grid-primary-resource flex-group-center">
+                        <input type="text" name="data.attributes.valiancy.value" value="{{data.attributes.valiancy.value}}" data-dtype="Number" />
+                        <span> / </span>
+                        <input type="text" name="data.attributes.valiancy.max" value="{{data.attributes.valiancy.max}}" data-dtype="Number" />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+<nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="overview">{{localize 'VALIANCE.OverviewTabLabel'}}</a>
+    <a class="item" data-tab="traits">{{localize 'VALIANCE.TraitsTabLabel'}}</a>
+    <a class="item" data-tab="abilities">{{localize 'VALIANCE.AbilitiesTabLabel'}}</a>
+    <a class="item" data-tab="items">{{localize 'VALIANCE.ItemsTabLabel'}}</a>
+    <a class="item" data-tab="biography">{{localize 'VALIANCE.BiographyTabLabel'}}</a>
+</nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Overview Tab --}}
+        <div class="tab overview" data-group="primary" data-tab="overview">
+            {{> "systems/valiance/templates/actor/parts/actor-overview.html"}}
+        </div>
+
+        {{!-- Traits Tab --}}
+        <div class="tab traits" data-group="primary" data-tab="traits">
+            {{> "systems/valiance/templates/actor/parts/actor-traits.html"}}
+        </div>
+
+        {{!-- Abilities Tab --}}
+        <div class="tab abilities" data-group="primary" data-tab="abilities">
+            {{> "systems/valiance/templates/actor/parts/actor-abilities.html"}}
+        </div>
+
+        {{!-- Items Tab --}}
+        <div class="tab items" data-group="primary" data-tab="items">
+            {{> "systems/valiance/templates/actor/parts/actor-items.html"}}
+        </div>
+
+        {{!-- Biography Tab --}}
+        <div class="tab biography" data-group="primary" data-tab="biography">
+            {{> "systems/valiance/templates/actor/parts/actor-biography.html"}}
+        </div>
+
+    </section>
+</form>
+
