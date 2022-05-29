@@ -63,19 +63,7 @@
                 "languages": "",
                 "characterNotes": ""
             },
-            "weightThreshold": 0,
-            "statusStacks": {
-                "burningStacks": {
-                    "value": 0
-                },
-                "poisonedStacks": {
-                    "value": 0
-                },
-                "regeneratingStacks": {
-                    "value": 0
-                }
-            },
-            "activeCooldowns": {}
+            "weightThreshold": 0
         }
     },
     "Item": {

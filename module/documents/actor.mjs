@@ -44,11 +44,11 @@ export class ValianceActor extends Actor {
 
         // Copy attributes to the top level, so that rolls can use
         // formulas like '@lethality * 2'
-        /*if (data.attributes) {
+        if (data.attributes) {
             for (let [key, value] of Object.entries(data.attributes)) {
-                data[key] = foundry.utils.deepClone(value);
+                data[key] = foundry.utils.deepClone(value).value;
             }
-        }*/
+        }
 
         return data;
     }

@@ -69,41 +69,37 @@
 
 	{{!-- Statuses --}}
 	<div>
-		<div class="grid grid-3col">
-			<div class="resource flex-group-center">
-				<label for="data.statusStacks.burningStacks.value" class="resource-label">{{localize 'VALIANCE.BurningStacksLabel'}}</label>
-				<div class="resource-content flexrow flex-center flex-between">
-					<input type="text" name="data.statusStacks.burningStacks.value" value="{{data.statusStacks.burningStacks.value}}" data-dtype="Number" />
-				</div>
-			</div>
-
-			<div class="resource flex-group-center">
-				<label for="data.statusStacks.poisonedStacks.value" class="resource-label">{{localize 'VALIANCE.PoisonedStacksLabel'}}</label>
-				<div class="resource-content flexrow flex-center flex-between">
-					<input type="text" name="data.statusStacks.poisonedStacks.value" value="{{data.statusStacks.poisonedStacks.value}}" data-dtype="Number" />
-				</div>
-			</div>
-
-			<div class="resource flex-group-center">
-				<label for="data.statusStacks.regeneratingStacks.value" class="resource-label">{{localize 'VALIANCE.RegeneratingStacksLabel'}}</label>
-				<div class="resource-content flexrow flex-center flex-between">
-					<input type="text" name="data.statusStacks.regeneratingStacks.value" value="{{data.statusStacks.regeneratingStacks.value}}" data-dtype="Number" />
-				</div>
-			</div>
-		</div>
-
 		<ol class="items-list effects-list">
 			{{#each effects as |section sid|}}
-			<li class="items-header flexrow" data-effect-type="{{section.type}}">
-				<h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
+			<li class="grid grid-cooldown-table items-header" data-effect-type="{{section.type}}">
+				<div class="item-name align-left">{{localize 'VALIANCE.StatusLabel'}}</div>
+				<div class="item-name align-center">{{localize 'VALIANCE.StatusStackLabel'}}</div>
+				<div class="item-controls">
+					<a class="effect-control effect-clearAll" data-action="clearAll" title="{{localize 'VALIANCE.ClearAllLabel'}}">
+						<i class="fas fa-trash"></i>
+					</a>
+				</div>
 			</li>
 
 			<ol class="item-list">
 				{{#each section.effects as |effect|}}
-				<li class="item effect flexrow" data-effect-id="{{effect.id}}">
+				<li class="item effect grid grid-cooldown-table" data-effect-id="{{effect.id}}">
 					<div class="item-name effect-name flexrow">
 						<img class="item-image" src="{{effect.data.icon}}" />
 						<h4>{{effect.data.label}}</h4>
+					</div>
+					<div class="item-controls">
+						{{#if (hasStacks effect)}}
+						<a class="effect-control effect-decrease" data-action="decrease" title="{{localize 'VALIANCE.EffectStackDecreaseLabel'}}">
+							<i class="fas fa-minus"></i>
+						</a>
+						<div class="item-name align-center">
+							<h4>{{effect.data.flags.valiance.stacks}}</h4>
+						</div>
+						<a class="effect-control effect-increase" data-action="increase" title="{{localize 'VALIANCE.EffectStackIncreaseLabel'}}">
+							<i class="fas fa-plus"></i>
+						</a>
+						{{/if}}
 					</div>
 					<div class="item-controls effect-controls flexrow">
 						<a class="effect-control" data-action="delete" title="{{localize 'VALIANCE.EffectClear'}}">
