@@ -35,6 +35,11 @@ export function _prepareStatusEffects() {
 			icon: 'systems/valiance/assets/icons/StatusAilmentPoisoned.png'
 		},
 		{
+			id: 'ailmentShaken',
+			label: 'Shaken',
+			icon: 'systems/valiance/assets/icons/StatusAilmentShaken.png'
+		},
+		{
 			id: 'ailmentSlowed',
 			label: 'Slowed',
 			icon: 'systems/valiance/assets/icons/StatusAilmentSlowed.png'
