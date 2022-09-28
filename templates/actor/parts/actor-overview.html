@@ -32,19 +32,12 @@
 </div>
 
 {{!-- Non-Resource Attributes --}}
-<div class="resources grid grid-4col">
+<div class="resources grid grid-3col">
 
 	<div class="resource flex-group-center">
 		<label for="data.attributes.movement.value" class="resource-label">{{localize 'VALIANCE.MovementLabel'}}</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="text" name="data.attributes.movement.value" value="{{data.attributes.movement.value}}" data-dtype="Number" />
-		</div>
-	</div>
-
-	<div class="resource flex-group-center">
-		<label for="data.attributes.focus.value" class="resource-label">{{localize 'VALIANCE.FocusLabel'}}</label>
-		<div class="resource-content flexrow flex-center flex-between">
-			<input type="text" name="data.attributes.focus.value" value="{{data.attributes.focus.value}}" data-dtype="Number" />
 		</div>
 	</div>
 
@@ -64,7 +57,7 @@
 
 </div>
 
-{{!-- Statuses and Cooldowns --}}
+{{!-- Statuses and Cooldowns/Limited --}}
 <div class="grid grid-2col">
 
 	{{!-- Statuses --}}
@@ -113,45 +106,89 @@
 		</ol>
 	</div>
 
-	{{!-- Cooldowns --}}
-	<ol class="items-list">
-		<li class="grid grid-cooldown-table items-header">
-			<div class="item-name align-center">{{localize 'VALIANCE.CooldownAbilityLabel'}}</div>
-			<div class="item-name align-center">{{localize 'VALIANCE.CooldownValueLabel'}}</div>
-			<div class="item-controls">
-				<a class="cooldown-control cooldown-create" data-type="activeCooldown" data-action="create" title="{{localize 'VALIANCE.CooldownAddLabel'}}">
-					<i class="fas fa-plus"></i>
-				</a>
-			</div>
-		</li>
-
-		{{#each activeCooldowns as |cooldown id|}}
-		<li class="grid grid-cooldown-table" data-item-id="{{cooldown._id}}">
-			<div class="item-name">
-				<h4>{{cooldown.name}}</h4>
-			</div>
-			<div class="item-controls">
-				<a class="cooldown-control cooldown-decrease" data-action="decrease" title="{{localize 'VALIANCE.CooldownDecreaseLabel'}}">
-					<i class="fas fa-minus"></i>
-				</a>
-				<div class="item-name align-center">
-					<h4>{{cooldown.data.value}}</h4>
+	{{!-- Cooldowns/Limited --}}
+	<div>
+		{{!-- Cooldowns --}}
+		<ol class="items-list">
+			<li class="grid grid-cooldown-table items-header">
+				<div class="item-name align-center">{{localize 'VALIANCE.CooldownAbilityLabel'}}</div>
+				<div class="item-name align-center">{{localize 'VALIANCE.CooldownValueLabel'}}</div>
+				<div class="item-controls">
+					<a class="cooldown-control cooldown-create" data-type="activeCooldown" data-action="create" title="{{localize 'VALIANCE.CooldownAddLabel'}}">
+						<i class="fas fa-plus"></i>
+					</a>
 				</div>
-				<a class="cooldown-control cooldown-increase" data-action="increase" title="{{localize 'VALIANCE.CooldownIncreaseLabel'}}">
-					<i class="fas fa-plus"></i>
-				</a>
-			</div>
-			<div class="item-controls">
-				<a class="cooldown-control cooldown-edit" data-type="activeCooldown" data-action="edit" title="{{localize 'VALIANCE.CooldownEditLabel'}}">
-					<i class="fas fa-edit"></i>
-				</a>
-				<a class="cooldown-control cooldown-delete" data-type="activeCooldown" data-action="delete" title="{{localize 'VALIANCE.CooldownClearLabel'}}">
-					<i class="fas fa-trash"></i>
-				</a>
-			</div>
-		</li>
-		{{/each}}
-	</ol>
+			</li>
+
+			{{#each activeCooldowns as |cooldown id|}}
+			<li class="grid grid-cooldown-table" data-item-id="{{cooldown._id}}">
+				<div class="item-name">
+					<h4>{{cooldown.name}}</h4>
+				</div>
+				<div class="item-controls">
+					<a class="cooldown-control cooldown-decrease" data-action="decrease" title="{{localize 'VALIANCE.CooldownDecreaseLabel'}}">
+						<i class="fas fa-minus"></i>
+					</a>
+					<div class="item-name align-center">
+						<h4>{{cooldown.data.value}}</h4>
+					</div>
+					<a class="cooldown-control cooldown-increase" data-action="increase" title="{{localize 'VALIANCE.CooldownIncreaseLabel'}}">
+						<i class="fas fa-plus"></i>
+					</a>
+				</div>
+				<div class="item-controls">
+					<a class="cooldown-control cooldown-edit" data-type="activeCooldown" data-action="edit" title="{{localize 'VALIANCE.CooldownEditLabel'}}">
+						<i class="fas fa-edit"></i>
+					</a>
+					<a class="cooldown-control cooldown-delete" data-type="activeCooldown" data-action="delete" title="{{localize 'VALIANCE.CooldownClearLabel'}}">
+						<i class="fas fa-trash"></i>
+					</a>
+				</div>
+			</li>
+			{{/each}}
+		</ol>
+
+		{{!-- Limited --}}
+		{{!-- Right now this is a barely-reskinned Cooldown list, eventually need to merge the two together as "ability" --}}
+		<ol class="items-list">
+			<li class="grid grid-cooldown-table items-header">
+				<div class="item-name align-center">{{localize 'VALIANCE.LimitedAbilityLabel'}}</div>
+				<div class="item-name align-center">{{localize 'VALIANCE.LimitedValueLabel'}}</div>
+				<div class="item-controls">
+					<a class="cooldown-control cooldown-create" data-type="activeCooldown" data-action="create" title="{{localize 'VALIANCE.LimitedAddLabel'}}">
+						<i class="fas fa-plus"></i>
+					</a>
+				</div>
+			</li>
+
+			{{#each activeCooldowns as |cooldown id|}}
+			<li class="grid grid-cooldown-table" data-item-id="{{cooldown._id}}">
+				<div class="item-name">
+					<h4>{{cooldown.name}}</h4>
+				</div>
+				<div class="item-controls">
+					<a class="cooldown-control cooldown-decrease" data-action="decrease" title="{{localize 'VALIANCE.LimitedDecreaseLabel'}}">
+						<i class="fas fa-minus"></i>
+					</a>
+					<div class="item-name align-center">
+						<h4>{{cooldown.data.value}}</h4>
+					</div>
+					<a class="cooldown-control cooldown-increase" data-action="increase" title="{{localize 'VALIANCE.LimitedIncreaseLabel'}}">
+						<i class="fas fa-plus"></i>
+					</a>
+				</div>
+				<div class="item-controls">
+					<a class="cooldown-control cooldown-edit" data-type="activeCooldown" data-action="edit" title="{{localize 'VALIANCE.LimitedEditLabel'}}">
+						<i class="fas fa-edit"></i>
+					</a>
+					<a class="cooldown-control cooldown-delete" data-type="activeCooldown" data-action="delete" title="{{localize 'VALIANCE.LimitedClearLabel'}}">
+						<i class="fas fa-trash"></i>
+					</a>
+				</div>
+			</li>
+			{{/each}}
+		</ol>
+	</div>
 
 </div>
 

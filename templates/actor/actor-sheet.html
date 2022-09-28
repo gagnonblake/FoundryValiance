@@ -5,6 +5,7 @@
         
         <div class="header-fields">
 
+            {{!-- First Row: Image, Name, Tier --}}
             <div class="grid grid-actor-header">
 
                 <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
@@ -19,14 +20,16 @@
                 </div>
             </div>
 
+            {{!-- Lantern toggle between first and second rows --}}
             <div>
                 <span>{{localize 'VALIANCE.LanternToggleLabel'}}</span>
                 <a class="misc-control" data-action="toggleLantern" title="{{localize 'VALIANCE.LanternToggle'}}">
                     <i class="fas fa-times"></i>
                 </a>
             </div>
-            
-            <div class="resources grid grid-3col">
+
+            {{!-- Second Row: Armor, Energy --}}
+            <div class="resources grid grid-2col">
 
                 <div class="resource flex-group-center">
                     <label for="data.attributes.armor.value" class="resource-label">{{localize 'VALIANCE.ArmorLabel'}}</label>
@@ -36,6 +39,20 @@
                         <input type="text" name="data.attributes.armor.max" value="{{data.attributes.armor.max}}" data-dtype="Number" />
                     </div>
                 </div>
+
+                <div class="resource flex-group-center">
+                    <label for="data.attributes.energy.value" class="resource-label">{{localize 'VALIANCE.EnergyLabel'}}</label>
+                    <div class="resource-content grid grid-primary-resource flex-group-center">
+                        <input type="text" name="data.attributes.energy.value" value="{{data.attributes.energy.value}}" data-dtype="Number" />
+                        <span> / </span>
+                        <input type="text" name="data.attributes.energy.max" value="{{data.attributes.energy.max}}" data-dtype="Number" />
+                    </div>
+                </div>
+
+            </div>
+
+            {{!-- Third Row: Endurance, Valiancy --}}
+            <div class="resources grid grid-2col">
 
                 <div class="resource flex-group-center">
                     <label for="data.attributes.endurance.value" class="resource-label">{{localize 'VALIANCE.EnduranceLabel'}}</label>
@@ -62,14 +79,16 @@
     </header>
 
     {{!-- Sheet Tab Navigation --}}
-<nav class="sheet-tabs tabs" data-group="primary">
-    {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="overview">{{localize 'VALIANCE.OverviewTabLabel'}}</a>
-    <a class="item" data-tab="traits">{{localize 'VALIANCE.TraitsTabLabel'}}</a>
-    <a class="item" data-tab="abilities">{{localize 'VALIANCE.AbilitiesTabLabel'}}</a>
-    <a class="item" data-tab="items">{{localize 'VALIANCE.ItemsTabLabel'}}</a>
-    <a class="item" data-tab="biography">{{localize 'VALIANCE.BiographyTabLabel'}}</a>
-</nav>
+    <nav class="sheet-tabs tabs" data-group="primary">
+
+        {{!-- Default tab is specified in actor-sheet.mjs --}}
+        <a class="item" data-tab="overview">{{localize 'VALIANCE.OverviewTabLabel'}}</a>
+        <a class="item" data-tab="traits">{{localize 'VALIANCE.TraitsTabLabel'}}</a>
+        <a class="item" data-tab="abilities">{{localize 'VALIANCE.AbilitiesTabLabel'}}</a>
+        <a class="item" data-tab="items">{{localize 'VALIANCE.ItemsTabLabel'}}</a>
+        <a class="item" data-tab="biography">{{localize 'VALIANCE.BiographyTabLabel'}}</a>
+
+    </nav>
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">

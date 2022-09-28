@@ -2,7 +2,6 @@
  * Set up custom status effects in the CONFIG object
  */
 export function _prepareStatusEffects() {
-	// Define custom statuses (in the future they should probably be defined elsewhere in some constant)
 	const statusEffects = [
 		{
 			id: 'ailmentBleeding',
@@ -20,9 +19,19 @@ export function _prepareStatusEffects() {
 			icon: 'systems/valiance/assets/icons/StatusAilmentBurning.png'
 		},
 		{
+			id: 'ailmentEnfeebled',
+			label: 'Enfeebled',
+			icon: 'systems/valiance/assets/icons/StatusAilmentEnfeebled.png'
+		},
+		{
 			id: 'ailmentDistracted',
 			label: 'Distracted',
 			icon: 'systems/valiance/assets/icons/StatusAilmentDistracted.png'
+		},
+		{
+			id: 'ailmentExhausted',
+			label: 'Exhausted',
+			icon: 'systems/valiance/assets/icons/StatusAilmentExhausted.png'
 		},
 		{
 			id: 'ailmentExposed',
@@ -38,6 +47,11 @@ export function _prepareStatusEffects() {
 			id: 'ailmentShaken',
 			label: 'Shaken',
 			icon: 'systems/valiance/assets/icons/StatusAilmentShaken.png'
+		},
+		{
+			id: 'ailmentShattered',
+			label: 'Shattered',
+			icon: 'systems/valiance/assets/icons/StatusAilmentShattered.png'
 		},
 		{
 			id: 'ailmentSlowed',
@@ -65,9 +79,19 @@ export function _prepareStatusEffects() {
 			icon: 'systems/valiance/assets/icons/StatusBoonEmpowered.png'
 		},
 		{
+			id: 'boonEnergized',
+			label: 'Energized',
+			icon: 'systems/valiance/assets/icons/StatusBoonEnergized.png'
+		},
+		{
 			id: 'boonFrenzied',
 			label: 'Frenzied',
 			icon: 'systems/valiance/assets/icons/StatusBoonFrenzied.png'
+		},
+		{
+			id: 'boonHardened',
+			label: 'Hardened',
+			icon: 'systems/valiance/assets/icons/StatusBoonHardened.png'
 		},
 		{
 			id: 'boonHastened',

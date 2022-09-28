@@ -5,6 +5,7 @@
 	"VALIANCE.PowerLabel": "Power",
 	"VALIANCE.ResilienceLabel": "Resilience",
 	"VALIANCE.ArmorLabel": "Armor",
+	"VALIANCE.EnergyLabel": "Energy",
 	"VALIANCE.EnduranceLabel": "Endurance",
 	"VALIANCE.ValiancyLabel": "Valiancy",
 	"VALIANCE.MovementLabel": "Movement",
@@ -27,6 +28,7 @@
 	"VALIANCE.RegeneratingStacksLabel": "Regenerating Stacks",
 	"VALIANCE.EffectStackDecreaseLabel": "Decrease Stack",
 	"VALIANCE.EffectStackIncreaseLabel": "Increase Stack",
+
 	"VALIANCE.CooldownAbilityLabel": "Ability",
 	"VALIANCE.CooldownValueLabel": "Cooldown",
 	"VALIANCE.CooldownAddLabel": "Add Cooldown",
@@ -34,6 +36,15 @@
 	"VALIANCE.CooldownDecreaseLabel": "Decrease Cooldown",
 	"VALIANCE.CooldownIncreaseLabel": "Increase Cooldown",
 	"VALIANCE.CooldownEditLabel": "Edit Cooldown",
+
+	"VALIANCE.LimitedAbilityLabel": "Ability",
+	"VALIANCE.LimitedValueLabel": "Uses",
+	"VALIANCE.LimitedAddLabel": "Add Limited Ability",
+	"VALIANCE.LimitedClearLabel": "Clear Limited Ability",
+	"VALIANCE.LimitedDecreaseLabel": "Decrease Uses",
+	"VALIANCE.LimitedIncreaseLabel": "Increase Uses",
+	"VALIANCE.LimitedEditLabel": "Edit Limited Ability",
+
 	"VALIANCE.EffectClear": "Clear Status",
 	"VALIANCE.LanternToggle": "Toggle Lantern",
 	"VALIANCE.LanternToggleLabel": "Toggle Lantern: ",

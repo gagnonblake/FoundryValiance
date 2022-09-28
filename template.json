@@ -30,6 +30,11 @@
                     "min": 0,
                     "max": 10
                 },
+                "energy": {
+                    "value": 5,
+                    "min": 0,
+                    "max": 5
+                },
                 "endurance": {
                     "value": 2,
                     "min": 0,
@@ -39,9 +44,6 @@
                     "value": 2,
                     "min": 0,
                     "max": 2
-                },
-                "focus": {
-                    "value": 0
                 },
                 "lethality": {
                     "value": 0
